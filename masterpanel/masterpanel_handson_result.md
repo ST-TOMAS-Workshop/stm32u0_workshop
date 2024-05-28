@@ -3,10 +3,10 @@ Presentation
 ----!
 
 # Test Functionality
-Check functionality we developt in past 30 minutes!
+Check functionality we develop in past 30 minutes!
 
 - Supply Nucelo board
-- After every press blue user button Duty cycle of Low pulse is changed
+- After every press blue user button a Duty cycle of Low pulse is updated
 - Visible change in **LED brightness**
 
 ## Measure consumption in LP Sleep

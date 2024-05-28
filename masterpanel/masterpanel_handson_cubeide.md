@@ -17,9 +17,9 @@ uint32_t SRC_Buffer_LED_PWM[4]  = {15, 30, 45, 0}; // define Low pulse width ~75
 
 # IPs start
 This section manage complete user code structure. MCU is runing at @1MHz Sysclock so LP Run and LP Sleep are implemented.
-DMA configuration is just about set source address (buffer with pulses) and destination address (Capture/Compare register). After one buttton press C/C register is updated with new value.
+DMA configuration is just about set source address (buffer with pulses) and destination address (Capture/Compare register). After buttton press Capture/Compare register is updated with new value.
 
-XxSMEN registers are cleared reduce further consumption in Sleep mode when internal busses are still clocked. Peripheries are not active as their master xxEN bits are reset. However, extra 10uA/1MHz is reduced deu to limiting clock distibution within device. By default xxSMEN are set after reset.
+XXSMEN registers are cleared reduce further consumption in Sleep mode when internal busses are still clocked. Peripheries are not active as their master xxEN bits are reset. However, extra 10uA/1MHz is reduced deu to limiting clock distibution within device. By default xxSMEN are set after reset.
 
 Before entering in SLeep/LP Sleep need to suspend Systick timer otherwise MCU wakes up imidiately within 1ms.
 <p> </p>

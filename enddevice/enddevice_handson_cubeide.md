@@ -1,4 +1,4 @@
-----!
+//----!
 Presentation
 ----!
 
@@ -32,6 +32,7 @@ Uncomment **HAL_LCD_MODULE_ENABLED** in `stm32u0xx_hal_conf.h` to be able operat
 #define HAL_LCD_MODULE_ENABLED
 ```
 <br />
+
 Drag and drop listed header files from `C:\Users\...\STM32Cube\Repository\STM32Cube_FW_U0_V1.0.0\Drivers\BSP\STM32U083C-DK` in to `Inc` folder of the project.
 
 - `stm32u083c_discovery_glass_lcd.h`
@@ -40,7 +41,29 @@ Drag and drop listed header files from `C:\Users\...\STM32Cube\Repository\STM32C
 - `stm32u083c_discovery_errno.h`
 
 ![image](./img/header_files.png)
+
+# Include Board Support Package and LowLayer library 2
+
+Drag and drop listed c file from `C:\Users\...\STM32Cube\Repository\STM32Cube_FW_U0_V1.0.0\Drivers\BSP\STM32U083C-DK` in to `Src` folder of the project.
+
+- `stm32u083c_discovery_glass_lcd.c`
+
 <br />
+
+Drag and drop listed header file from `C:\Users\...\STM32Cube\Repository\STM32Cube_FW_U0_V1.0.0\Drivers\STM32U0xx_HAL_Driver\Inc` in to `STM32U0xx_HAL_Driver\Inc` folder of the project.
+
+- `stm32u0xx_hal_lcd.h`
+
+<br />
+
+Drag and drop listed c file from `C:\Users\...\STM32Cube\Repository\STM32Cube_FW_U0_V1.0.0\Drivers\STM32U0xx_HAL_Driver\Src` in to `STM32U0xx_HAL_Driver\Src` folder of the project.
+
+- `stm32u0xx_hal_lcd.c`
+
+<br />
+
+# DK Board revision
+- Solder mask print MB1933x (x = A/B/C/..)
 
 Define correct board revision in **stm32u083c_discovery.h**. Differ in assembled Glass LCD.
 
@@ -50,6 +73,7 @@ Define correct board revision in **stm32u083c_discovery.h**. Differ in assembled
 #endif
 ```
 <br />
+
 # Exported Functions
 Copy paste following snippet in `USER CODE BEGIN EFP` section in **main.h** file:
 
@@ -72,6 +96,8 @@ Let skip them and use simple LL function.
  // HAL_RTCEx_WakeUpTimerIRQHandler(&hrtc);
   /* USER CODE BEGIN RTC_TAMP_IRQn 1 */
 ```
+
+<br />
 
 Copy paste following snippet in `USER CODE BEGIN RTC_TAMP_IRQn 1` section in **stm32u0xx_it.c** file:
 
@@ -97,6 +123,8 @@ if (LL_RTC_IsActiveFlag_WUT(RTC) != 0)
  // HAL_LPTIM_IRQHandler(&hlptim1);
   /* USER CODE BEGIN TIM6_DAC_LPTIM1_IRQn 1 */
 ```
+
+<br />
 
 Copy paste following snippet in `USER CODE BEGIN TIM6_DAC_LPTIM1_IRQn 1` section in **stm32u0xx_it.c** file:
 
@@ -138,6 +166,7 @@ Copy paste following snippet in `USER CODE BEGIN PFP` section in **main.c** file
 void Convert_IntegerIntoChar(float number, uint16_t *p_tab);
 ```
 
+# Initialization 2
 ## Reset Backup domain
 Clear complete backup domain (LSE, RTC,..) in case of system reset.
 
@@ -230,7 +259,7 @@ Copy paste following snippet in `USER CODE BEGIN 4` section in **main.c** file:
 /*ISR for Falling edges from CH1_LPTIM1 and calculate duty cycle of negative pulse
  * 
  * ____IDLE_____negDC_______
- *    			|	|		|	|
+ *    		   	|	|		|	|
  *     			|___|		|___|
  * 			oldVF  newVR  newVF
  * */

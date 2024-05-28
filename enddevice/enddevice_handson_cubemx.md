@@ -25,7 +25,7 @@ To be able catch signal edge down to Stop modes. LPTIM1 and LSE cooperates toget
   
 - Configure `Counts internal clock events` mode
   
-- Activate `Channel_1` and `Channel_2` both in default `no IO used: ....`
+- Activate `Channel_1` and `Channel_3` both in default `no IO used: ....`
 
 - Channel 1 Parameter Settings:
   - `Capture`
@@ -63,13 +63,13 @@ Application periodically wakeups from Stop modes and refresh LCD glass display.
   
 - Select **LSE** as source for `RTC/LCD`
 
-- Select **LSE** as source for `LPTIM1`. 
+- Select **LSE** as source for `LPTIM1`
 
   
 ![image](./img/clock.png)
 
 # Project Manager
-Project is now configured.
+Project is now ready for generation!
 
 - Select **CubeIDE Toolchain**
 

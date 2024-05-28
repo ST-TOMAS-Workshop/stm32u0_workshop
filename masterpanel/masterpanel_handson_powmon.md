@@ -2,7 +2,15 @@
 Presentation
 ----!
 # Power Monitor
-For Low power application let use Power Shield feature built in STLink-V3PWR for measure purpose and display profile of consumed current in real time.
+STLINK-V3PWR is a two-in-one standalone debugger probe and a source measurement unit (SMU) designed to synchronize code execution with a power consumption of STM32 applications in real time. This tool is specifically adapted for power consumption optimization.
+
+- Programmable voltage source from 1.6 to 3.6 V
+- sampling rate upto 100 kSpS
+- Dynamic measurement: few nA to 500 mA current
+- Auxiliary output voltage source from 1.6 to 3.6 V under up to 2 A 
+- JTAG / Serial Wire Debug
+- UART interface on Virtual COM port (VCP)
+- Multipath bridge USB to SPI/I2C/CAN/GPIOs
 
 ![image](./img/V3PWR.png) 
 
@@ -27,7 +35,7 @@ Wires can be optionally twisted to reduce noise.
 ![gif1](./img/CubeMX_PwrMon_SelectBoard.gif)
 
 # Wiring diagram to STM32U83-NUCLEO board
-- **Remove JP5** and **Remove JP9** on NUCLEO board
+- **Remove JP5** and **JP9** on NUCLEO board
 
 - Connect wires to **GND** and left **Pin 2** of **JP5**
   
@@ -36,8 +44,6 @@ Wires can be optionally twisted to reduce noise.
 ![image2](./img/wiring.png) 
 
 - or **Connect A-meter** to Pin 1 & 2 of JP5. Then keep NUCLEO board power from USB-C and do not disconect it. 
-  
-![image3](./img/Ameter.png) 
 
 # Configuration
 In Configuration window many parameters can be adjusted. For hands-on purpose let select:
