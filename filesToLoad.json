@@ -392,6 +392,11 @@
       "name": "AT THE WORKSHOP",
       "children": [
         {
+          "type": "File",
+          "name": "Hands-on Overview",
+          "file": "handson_overview.md"
+        },
+        {
           "type": "Folder",
           "name": "STM32U0 Demo Hands-on",
           "children": [
@@ -482,7 +487,7 @@
         {
           "type": "File",
           "name": "WORKSHOP PACKAGE MATERIALS",
-          "file": "stm32u5_workshop_package_materials.md"
+          "file": "stm32u0_workshop_package_materials.md"
         }
       ]
     },
