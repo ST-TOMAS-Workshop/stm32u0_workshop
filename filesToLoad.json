@@ -397,6 +397,11 @@
           "file": "masterpanel_handson_intro.md",
           "children": [
             {
+              "type": "File",
+              "name": "1. Master Panel Overview",
+              "file": "masterpanel_handson_intro.md"
+            },
+            {
               "type": "Folder",
               "name": "Master Panel Hands-on",
               "children": [
