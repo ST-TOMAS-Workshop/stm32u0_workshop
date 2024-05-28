@@ -632,7 +632,7 @@
             },
             {
               "type": "Folder",
-              "name": "DEmo",
+              "name": "End Device Hands-on",
               "children": [
                 {
                   "type": "File",

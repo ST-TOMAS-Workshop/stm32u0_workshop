@@ -1,18 +1,16 @@
-----!
+-/---!
 Presentation
 ----!
 
-# Measured consumption
-![image](./img/combo.png)
+# Test Functionality
+Check functionality we developt in past 30 minutes!
 
-## Measure consumption in Stop 2 mode given by SRAMs retention off
-- Consumption is reduced to aprrox. 4.5 uA.
+- Supply Nucelo board
+- After every press blue user button Duty cycle of Low pulse is changed
+- Visible change in **LED brightness**
+
+## Measure consumption in LP Sleep
+- Consumption **50uA** for LP Sleep mode and PWM operation
 - Triangle wave due to Low Power regulator operation
 
-![image](./img/stop2.png)
-
-## Higher consumption in Run sequence when LED is driven
-- Extra current consumption is given by biasing of BJT transistor.
-- LED is not driven directly from GPIO thus LED current is not visible and measured.
-
-![image](./img/gpio_bjt.png)
+![image](./img/sleep.png)
