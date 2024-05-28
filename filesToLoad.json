@@ -298,6 +298,11 @@
       "file": "masterpanel_handson_result.md"
     },
     {
+      "name": "7. Demo Hands-on Overview",
+      "path": "/enddevice",
+      "file": "handson_overview.md"
+    },    
+    {
       "name": "Theory",
       "path": "/lpbam/theory",
       "file": "linked list.md"
@@ -393,7 +398,7 @@
       "children": [
         {
           "type": "File",
-          "name": "Hands-on Overview",
+          "name": "DEMO Hands-on Overview",
           "file": "handson_overview.md"
         },
         {
