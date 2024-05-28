@@ -25,12 +25,13 @@ Copy paste following snippet in `USER CODE BEGIN Includes` section in **main.h**
 #include "stm32u0xx_ll_lptim.h"
 #include "stm32u0xx_ll_rtc.h"
 ```
-
+<br />
 Uncomment **HAL_LCD_MODULE_ENABLED** in `stm32u0xx_hal_conf.h` to be able operate with LCD BSP library.
+
 ```c
 #define HAL_LCD_MODULE_ENABLED
 ```
-
+<br />
 Drag and drop listed header files from `C:\Users\...\STM32Cube\Repository\STM32Cube_FW_U0_V1.0.0\Drivers\BSP\STM32U083C-DK` in to `Inc` folder of the project.
 
 - `stm32u083c_discovery_glass_lcd.h`
@@ -39,6 +40,7 @@ Drag and drop listed header files from `C:\Users\...\STM32Cube\Repository\STM32C
 - `stm32u083c_discovery_errno.h`
 
 ![image](./img/header_files.png)
+<br />
 
 Define correct board revision in **stm32u083c_discovery.h**. Differ in assembled Glass LCD.
 
@@ -47,7 +49,7 @@ Define correct board revision in **stm32u083c_discovery.h**. Differ in assembled
 #define USE_STM32U083C_DISCO_REVC
 #endif
 ```
-
+<br />
 # Exported Functions
 Copy paste following snippet in `USER CODE BEGIN EFP` section in **main.h** file:
 
@@ -197,18 +199,22 @@ It influences contrast but still Glass LCD will be readable.
 - Avoid Low resistance R-ladder in LCD output stage
 
 Modify two lines in `BSP_LCD_GLASS_Init()` function upper section in **stm32u083c_discovery_glass_lcd.c** file:
+
 ```c
 LCDHandle.Init.PulseOnDuration  = LCD_PULSEONDURATION_1; //LCD_PULSEONDURATION_4
 LCDHandle.Init.HighDrive        = LCD_HIGHDRIVE_DISABLE; //LCD_HIGHDRIVE_ENABLE
 ```
+
 ## Stop mode
 Enter in Stop mode. Selected Stop1 mode is due to possible transition between LPRun <-> Stop1. Transition between LPRun <-> Stop2 is not allowed deu to Main regulaotr is off. Please chekc Refference Manual. 
 
 Copy paste following snippet in while (1) `USER CODE BEGIN WHILE` section in **main.c** file:
+
 ```c
 /*Enter in STOPx mode*/
 HAL_PWREx_EnterSTOP1Mode(PWR_STOPENTRY_WFI);
 ```
+
 # ISR Callback
 Incoming signal is proccesed once device wakeups from Stop mode in ISR callbacks.
 
@@ -219,6 +225,7 @@ Also handle 1s TimeOut on bus line.
 Adding simpler function for ISR for Rising edges from CH3_LPTIM1.
 
 Copy paste following snippet in `USER CODE BEGIN 4` section in **main.c** file:
+
 ```c
 /*ISR for Falling edges from CH1_LPTIM1 and calculate duty cycle of negative pulse
  * 
@@ -267,6 +274,7 @@ Also handle 1s TimeOut on bus line.
 Adding helper fucntion which convert Integer (measured Duty Cycle) into Char which can be displayed on Glass LCD.
 
 Copy paste following snippet in `USER CODE BEGIN 4` section in **main.c** file:
+
 ```c
 /*ISR from 1s periodic timer*/
 void WakeUp_Callback(void)
