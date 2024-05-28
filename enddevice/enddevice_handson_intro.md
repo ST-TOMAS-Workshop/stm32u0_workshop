@@ -1,4 +1,4 @@
-//----!
+----!
 Presentation
 ----!
 # ???
@@ -18,6 +18,7 @@ Let imagine simple BUS architecture one MASTER panel and multiple End device.
 
 ## In a Workshop
 - Use **STM32U83-DK** board
+- Device not supplied from BUS (it would required extra power supply)
 - Measure incoming signal by LPTIM with external LSE(quartz) crystal
 - Re-shape edges by internal **Comparator**
 - Between edges and during Idle state on BUS the device enter in STOP mode

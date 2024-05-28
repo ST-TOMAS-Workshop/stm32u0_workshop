@@ -263,6 +263,41 @@
       "file": "enddevice_handson_result.md"
     },
     {
+      "name": "1. Hands-on Overview",
+      "path": "/masterpanel",
+      "file": "masterpanel_handson_intro.md"
+    },
+    {
+      "name": "2. Start Project",
+      "path": "/masterpanel",
+      "file": "masterpanel_handson_project.md"
+    },
+    {
+      "name": "3. CubeMx Configuration",
+      "path": "/masterpanel",
+      "file": "masterpanel_handson_cubemx.md"
+    },
+    {
+      "name": "4. CubeIDE Code",
+      "path": "/masterpanel",
+      "file": "masterpanel_handson_cubeide.md"
+    },
+    {
+      "name": "5. CubeIDE Debug",
+      "path": "/masterpanel",
+      "file": "masterpanel_handson_debug.md"
+    },
+    {
+      "name": "6. Cube Power Monitor",
+      "path": "/masterpanel",
+      "file": "masterpanel_handson_powmon.md"
+    },
+    {
+      "name": "7. Power Consumption",
+      "path": "/masterpanel",
+      "file": "masterpanel_handson_result.md"
+    },
+    {
       "name": "Theory",
       "path": "/lpbam/theory",
       "file": "linked list.md"
@@ -552,36 +587,56 @@
         },
         {
           "type": "Folder",
-          "name": "2. ULP modes",
+          "name": "STM32U0 Demo Hands-on",
           "children": [
             {
               "type": "Folder",
-              "name": "ULP modes theory",
+              "name": "Master Panel Hands-on",
               "children": [
                 {
                   "type": "File",
-                  "name": "1. ULP modes",
-                  "file": "enddevice_theory_enddevice.md"
+                  "name": "1. Master Panel Overview",
+                  "file": "masterpanel_handson_intro.md"
                 },
                 {
                   "type": "File",
-                  "name": "2. Clocks",
-                  "file": "enddevice_theory_clock.md"
+                  "name": "2. Start Project",
+                  "file": "masterpanel_handson_project.md"
                 },
                 {
                   "type": "File",
-                  "name": "3. EXTI",
-                  "file": "enddevice_theory_exti.md"
+                  "name": "3. CubeMx Configuration",
+                  "file": "masterpanel_handson_cubemx.md"
+                },
+                {
+                  "type": "File",
+                  "name": "4. CubeIDE Code",
+                  "file": "masterpanel_handson_cubeide.md"
+                },
+                {
+                  "type": "File",
+                  "name": "5. CubeIDE Debug",
+                  "file": "masterpanel_handson_debug.md"
+                },
+                {
+                  "type": "File",
+                  "name": "6. Cube Power Monitor",
+                  "file": "masterpanel_handson_powmon.md"
+                },
+                {
+                  "type": "File",
+                  "name": "7. Results",
+                  "file": "masterpanel_handson_result.md"
                 }
               ]
             },
             {
               "type": "Folder",
-              "name": "ULP modes hands-on",
+              "name": "DEmo",
               "children": [
                 {
                   "type": "File",
-                  "name": "1. Hands-on Overview",
+                  "name": "1. End Device Overview",
                   "file": "enddevice_handson_intro.md"
                 },
                 {
@@ -611,7 +666,7 @@
                 },
                 {
                   "type": "File",
-                  "name": "7. Power Consumption",
+                  "name": "7. Results",
                   "file": "enddevice_handson_result.md"
                 }
               ]

@@ -1,18 +1,29 @@
-----!
+/----!
 Presentation
 ----!
+# Test Functionality
+Check functionlaity we developt in past 90 minutes!
+
+- Supply DK board
+- Reset Nucelo board by reset button - to be sure BUS is in IDLE state
+- Connect Nucleo to DK board
+- Reset DK board - welcome message should scrolling
+- After press user(blue) button on Nucleo the End Device shows state on BUS (IDLE or Duty Cycle of Low pulse 15/30/45 %)
+
+![gif](./img/zoomconsumption.gif)
 
 # Measured consumption
-![image](./img/combo.png)
+## Measure consumption in IDLE state on BUS
+- Average consumption in **IDLE ~8.2uA** STOP1, driving LCD, keep LPTIM and RTC active
 
-## Measure consumption in Stop 2 mode given by SRAMs retention off
-- Consumption is reduced to aprrox. 4.5 uA.
-- Triangle wave due to Low Power regulator operation
+![image](./img/stop1.png)
 
-![image](./img/stop2.png)
+## Measure consumption in non-IDLE state on BUS
 
-## Higher consumption in Run sequence when LED is driven
-- Extra current consumption is given by biasing of BJT transistor.
-- LED is not driven directly from GPIO thus LED current is not visible and measured.
+- Average consumption once pulses occur on BUS **non-IDLE ~39uA** combination STOP1 + LP Run in ISR, process data
 
-![image](./img/gpio_bjt.png)
+![image](./img/fullconsumption.png)
+
+- Detail focused on ISR from LPTIM_IC and RTC wake 
+
+![image](./img/zoomconsumption.png)

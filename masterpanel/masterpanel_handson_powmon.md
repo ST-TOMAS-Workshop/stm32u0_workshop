@@ -1,4 +1,4 @@
-//----!
+----!
 Presentation
 ----!
 # Power Monitor
@@ -7,7 +7,7 @@ For Low power application let use Power Shield feature built in STLink-V3PWR for
 ![image](./img/V3PWR.png) 
 
 # STLINK-V3PWR
-- Connect **two wires in position OUT & 1 GND** as shown in picture below. 
+- Connect **two wires in position OUT & GND** as shown in picture below. 
 
 <ainfo>
 Wires can be optionally twisted to reduce noise.
@@ -26,16 +26,16 @@ Wires can be optionally twisted to reduce noise.
 
 ![gif1](./img/CubeMX_PwrMon_SelectBoard.gif)
 
-# Wiring diagram to STM32U83-DK board
-- **Remove JP7** on DK board
+# Wiring diagram to STM32U83-NUCLEO board
+- **Remove JP5** and **Remove JP9** on NUCLEO board
 
-- Connect wires to **GND** and left **Pin 2** of **JP7**
+- Connect wires to **GND** and left **Pin 2** of **JP5**
   
 - Disconnect USB-C from DK board to avoid small leakage current (unprecise current measuring) due to second ground reference.
 
 ![image2](./img/wiring.png) 
 
-- or **Connect A-meter** to Pin 1 & 2 of JP7. Then keep DK board power from USB-C and do not disconect it. 
+- or **Connect A-meter** to Pin 1 & 2 of JP5. Then keep NUCLEO board power from USB-C and do not disconect it. 
   
 ![image3](./img/Ameter.png) 
 

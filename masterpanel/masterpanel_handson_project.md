@@ -1,4 +1,4 @@
-//----!
+----!
 Presentation
 ----!
 
@@ -7,7 +7,7 @@ Press **Access to MCU selector**
 <p> </p>
 ![gif](./img/mcu_select.gif)
 
-# Select STM2U83MCT6 and Start Project
+# Select STM2U83RCT6 and Start Project
 <p> </p>
 
-![image](./img/DK_project.png)
+![image](./img/NU_project.png)

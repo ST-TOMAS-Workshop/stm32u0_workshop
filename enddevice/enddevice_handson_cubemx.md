@@ -32,10 +32,10 @@ To be able catch signal edge down to Stop modes. LPTIM1 and LSE cooperates toget
   - `COMP1` as Input Capture source
   - `Falling edge` for Polarity ch1 
 
-- Channel 1 Parameter Settings:
+- Channel 3 Parameter Settings:
   - `Capture`
   - `COMP1` as Input Capture source
-  - `Rising edge` for Polarity ch1 
+  - `Rising edge` for Polarity ch3 
   
 - Enable `TIM6, DAC, LPTIM1 Global Interrupts` in NVIC Setting tab
 
