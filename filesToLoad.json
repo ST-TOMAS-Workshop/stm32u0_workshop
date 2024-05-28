@@ -394,6 +394,7 @@
         {
           "type": "Folder",
           "name": "STM32U0 Demo Hands-on",
+          "file": "masterpanel_handson_intro.md",
           "children": [
             {
               "type": "Folder",
