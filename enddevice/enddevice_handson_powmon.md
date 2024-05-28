@@ -7,7 +7,7 @@ For Low power application let use Power Shield feature built in STLink-V3PWR for
 ![image](./img/V3PWR.png) 
 
 # STLINK-V3PWR
-- Connect **two wires in position OUT & 1 GND** as shown in picture below. 
+- Connect **two wires in position OUT & GND** as shown in picture below. 
 
 <ainfo>
 Wires can be optionally twisted to reduce noise.
@@ -37,7 +37,6 @@ Wires can be optionally twisted to reduce noise.
 
 - or **Connect A-meter** to Pin 1 & 2 of JP7. Then keep DK board power from USB-C and do not disconect it. 
   
-![image3](./img/Ameter.png) 
 
 # Configuration
 In Configuration window many parameters can be adjusted. For hands-on purpose let select:
@@ -50,7 +49,7 @@ In Configuration window many parameters can be adjusted. For hands-on purpose le
 
 - Press **POWER ON** - both LEDs (AUX and OUT) light Green
 
-- **Start Acquisition**.
+- **Start Acquisition**
 
 ![gif2](./img/CubeMX_PwrMon_Conf.gif)
 

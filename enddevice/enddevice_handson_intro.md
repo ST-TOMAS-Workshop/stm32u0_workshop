@@ -1,4 +1,4 @@
-----!
+//----!
 Presentation
 ----!
 # ???
@@ -42,4 +42,4 @@ Let imagine simple BUS architecture one MASTER panel and multiple End device.
 - MCU never wakeup and can run at very low freguency (down to 100 kHz)
 - Optionally consumption profile can be verified in **STM32CubeMonitor-Power**
   
-![image](./img/Master.png)
+![image](./img/master.png)
