@@ -13,3 +13,27 @@ Let imagine simple BUS architecture one Master Panel and multiple End devices.
 
 ![image](./img/stream.png)
 
+# Prerequisites
+- Software:
+  - **[STM32CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html)** from version 6.11.0
+  - **[STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html)** from version 1.15.1
+  - **[STM32U0 Cube library](https://www.st.com/en/embedded-software/stm32cubeu0.html)** from version 1.0.0
+  - **[STM32Cube Monitor Power](https://www.st.com/en/development-tools/stm32cubemonpwr.html)** from version 1.2.1
+<br>
+- Hardware:
+
+  - **2 USB-C** cables 
+  <br>
+  - **2 female-female wires** (min 10cm length) to connect header pins 
+  <br>
+  - **[NUCLEO-U083RC](https://www.st.com/en/evaluation-tools/nucleo-u083rc.html)** board (will be delivered on the session)
+  <br>
+  ![image](./img/nucleo.png)
+  <br>
+  - **[STM32U083C-DK](https://www.st.com/en/evaluation-tools/stm32u083c-dk.html)**
+  <br>
+  ![image](./img/DK.png)
+  <br>
+  (alternatively you can take your own multimeter with 1uA current measurement range)
+  <br>
+
