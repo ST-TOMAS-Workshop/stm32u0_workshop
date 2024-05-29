@@ -1,3 +1,7 @@
+----!
+Presentation
+----!
+
 # Wired BUS Architecture
 Let imagine simple BUS architecture one Master Panel and multiple End devices.
 
@@ -26,14 +30,14 @@ Let imagine simple BUS architecture one Master Panel and multiple End devices.
   <br>
   - **2 female-female wires** (min 10cm length) to connect header pins 
   <br>
-  - **[NUCLEO-U083RC](https://www.st.com/en/evaluation-tools/nucleo-u083rc.html)** board (will be delivered on the session)
+  - **[NUCLEO-U083RC](https://www.st.com/en/evaluation-tools/nucleo-u083rc.html)** board (??? Can be ordered after session for special price?? or something else???)
   <br>
   ![image](./img/nucleo.png)
   <br>
-  - **[STM32U083C-DK](https://www.st.com/en/evaluation-tools/stm32u083c-dk.html)**
+  - **[STM32U083C-DK](https://www.st.com/en/evaluation-tools/stm32u083c-dk.html)** board (??? Can be ordered after session for special price?? or something else???)
   <br>
   ![image](./img/DK.png)
   <br>
-  (alternatively you can take your own multimeter with 1uA current measurement range)
+  - Alternatively you can take your own multimeter with 1uA current measurement range
   <br>
 
