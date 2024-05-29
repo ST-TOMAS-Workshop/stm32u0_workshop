@@ -38,6 +38,10 @@ Let imagine simple BUS architecture one Master Panel and multiple End devices.
   <br>
   ![image](./img/DK.png)
   <br>
+  - **[STLINK-V3PWR](https://www.st.com/en/development-tools/stlink-v3pwr.html)** board (??? Can be ordered after session for special price?? or something else???)
+  <br>
+  ![image](./img/V3PWR.png)
+  <br>
   - Alternatively you can take your own multimeter with 1uA current measurement range
   <br>
 
