@@ -72,6 +72,7 @@ Drag and drop listed c file from `C:\Users\...\STM32Cube\Repository\STM32Cube_FW
 
 # Possible compilation error
 It's a known point retated to the non-ASCII characters in BSP package for LCD driver. This depends on the tools (for exemple IAR display it and recognize it correctly). For STM32CubeIDE and MDK-ARM we added some options to support it and this compiling well.
+
 Add option `-Wno-multichar` in `Properties -> C/C++ Build -> Settings -> MCU GCC Compilier -> Miscellaneous` (for CubeIDE or equivalent for different tool)?
 
 ![image](./img/wno_multichar.png)
@@ -275,9 +276,9 @@ Copy paste following snippet in `USER CODE BEGIN 4` section in **main.c** file:
 /*ISR for Falling edges from CH1_LPTIM1 and calculate duty cycle of negative pulse
  * 
  *       ____IDLE_____negDC_______
- *    		   	|	|		|	|
- *     			|___|		|___|
- * 			oldVF  newVR  newVF
+ *    		   	|	|	  |	  |
+ *     			  |___|		|___|
+ * 			  oldVF  newVR  newVF
  * */
 void CaptureFalling_Callback(void)
 {
