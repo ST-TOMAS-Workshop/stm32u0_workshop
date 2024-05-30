@@ -1,4 +1,4 @@
-----!
+//----!
 Presentation
 ----!
 
@@ -33,6 +33,13 @@ Uncomment **HAL_LCD_MODULE_ENABLED** in `stm32u0xx_hal_conf.h` to be able operat
 ```
 <br />
 
+# Import Board Support Package
+
+Rename `stm32u083c_discovery_conf_template.h` from `C:\Users\...\STM32Cube\Repository\STM32Cube_FW_U0_V1.0.0\Drivers\BSP\STM32U083C-DK` to `stm32u083c_discovery_conf.h`
+
+![image](./img/conf_template.png)
+
+
 Drag and drop listed header files from `C:\Users\...\STM32Cube\Repository\STM32Cube_FW_U0_V1.0.0\Drivers\BSP\STM32U083C-DK` in to `Inc` folder of the project.
 
 - `stm32u083c_discovery_glass_lcd.h`
@@ -42,13 +49,14 @@ Drag and drop listed header files from `C:\Users\...\STM32Cube\Repository\STM32C
 
 ![image](./img/header_files.png)
 
-# Include Board Support Package and LowLayer library 2
-
+<br />
 Drag and drop listed c file from `C:\Users\...\STM32Cube\Repository\STM32Cube_FW_U0_V1.0.0\Drivers\BSP\STM32U083C-DK` in to `Src` folder of the project.
 
 - `stm32u083c_discovery_glass_lcd.c`
 
 <br />
+
+# Import Hardware Abstract Library
 
 Drag and drop listed header file from `C:\Users\...\STM32Cube\Repository\STM32Cube_FW_U0_V1.0.0\Drivers\STM32U0xx_HAL_Driver\Inc` in to `STM32U0xx_HAL_Driver\Inc` folder of the project.
 
@@ -59,6 +67,14 @@ Drag and drop listed header file from `C:\Users\...\STM32Cube\Repository\STM32Cu
 Drag and drop listed c file from `C:\Users\...\STM32Cube\Repository\STM32Cube_FW_U0_V1.0.0\Drivers\STM32U0xx_HAL_Driver\Src` in to `STM32U0xx_HAL_Driver\Src` folder of the project.
 
 - `stm32u0xx_hal_lcd.c`
+
+<br />
+
+# Possible compilation error
+It's a known point retated to the non-ASCII characters in BSP package for LCD driver. This depends on the tools (for exemple IAR display it and recognize it correctly). For STM32CubeIDE and MDK-ARM we added some options to support it and this compiling well.
+Add option `-Wno-multichar` in `Properties -> C/C++ Build -> Settings -> MCU GCC Compilier -> Miscellaneous` (for CubeIDE or equivalent for different tool)?
+
+![image](./img/wno_multichar.png)
 
 <br />
 
@@ -215,7 +231,7 @@ BSP_LCD_GLASS_Clear();
 
 /* Reduce Vcld (Contrast Control) after scrolling text
  *  High drive and PulseOn duration already changed in BSP -> lower consumption*/
-MODIFY_REG(LCD->FCR, LCD_FCR_CC, LCD_CONTRASTLEVEL_2);
+MODIFY_REG(LCD->FCR, LCD_FCR_CC, LCD_CONTRASTLEVEL_0);
 while (READ_BIT(LCD->SR, LCD_SR_FCRSR) == 0);
 
 BSP_LCD_GLASS_DisplayString((uint8_t *)"IDLE");
@@ -348,24 +364,25 @@ void WakeUp_Callback(void)
 
 }
 
+/*Simplified for Two Digits only, rest is kept as a reference*/
 void  Convert_IntegerIntoChar(float number, uint16_t *p_tab)
 {
   uint16_t units=0, tens=0; // hundreds=0, thousands=0, tenthousand=0, hundredthousand=0;
 
   uint32_t number1 = (uint32_t) number;
 
-  units = ((((number1%100000)%10000)%1000)%100)%10;
+  units = number1%10;
+  tens = ((number1-units)/10)%10;
+
+  /* Full Integer converts as follows*/
+  /*units = ((((number1%100000)%10000)%1000)%100)%10;
   tens = (((((number1-units)/10)%10000)%1000)%100)%10;
- // hundreds = ((((number1-tens-units)/100)%1000)%100)%10;
- //thousands = (((number1-hundreds-tens-units)/1000)%100)%10;
- //tenthousand = ((number1-thousands-hundreds-tens-units)/10000)%10;
- //hundredthousand = ((number1-tenthousand-thousands-hundreds-tens-units)/100000);
+  hundreds = ((((number1-tens-units)/100)%1000)%100)%10;
+  thousands = (((number1-hundreds-tens-units)/1000)%100)%10;
+  tenthousand = ((number1-thousands-hundreds-tens-units)/10000)%10;
+  hundredthousand = ((number1-tenthousand-thousands-hundreds-tens-units)/100000);*/
 
   *(p_tab+5) = units + 0x30;
   *(p_tab+4) = tens + 0x30;
-  //*(p_tab+3) = hundreds + 0x30;
-  //*(p_tab+2) = thousands + 0x30;
-  //*(p_tab+1) = tenthousand + 0x30;
-  //*(p_tab+0) = hundredthousand + 0x30;
 }
 ```

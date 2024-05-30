@@ -16,7 +16,7 @@ Presentation
 
 - Duty cycle is monitored on LED dimming
 
-- MCU never wakeup and can run at very low freguency (down to 100 kHz)
+- MCU never wakeup
 
 - Optionally consumption profile can be verified in **STM32CubeMonitor-Power**
   
