@@ -14,7 +14,7 @@ Check functionlaity we developt in past 60 minutes!
 
 # Measured consumption
 ## Measure consumption in IDLE state on BUS
-- Average consumption in **IDLE ~8.7uA** STOP1, driving LCD, keep LPTIM and RTC active
+- Average consumption in **IDLE ~ 8 uA** STOP1, driving LCD, keep LPTIM and RTC active
 
 ![image](./img/stop1.png)
 
