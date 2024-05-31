@@ -60,8 +60,8 @@ all: main-build
 main-build: EndDevice.elf secondary-outputs
 
 # Tool invocations
-EndDevice.elf EndDevice.map: $(OBJS) $(USER_OBJS) C:\Users\krupickj\OneDrive\ -\ STMicroelectronics\backup\Workshops\U0\ workshop\ 2024\EndDevice\STM32U083MCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "EndDevice.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\krupickj\OneDrive - STMicroelectronics\backup\Workshops\U0 workshop 2024\EndDevice\STM32U083MCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EndDevice.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+EndDevice.elf EndDevice.map: $(OBJS) $(USER_OBJS) C:\Users\krupickj\OneDrive\ -\ STMicroelectronics\backup\Workshops\U0\ workshop\ 2024\git_repo\stm32u0_workshop\hands_on_ready\EndDevice\STM32U083MCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "EndDevice.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\krupickj\OneDrive - STMicroelectronics\backup\Workshops\U0 workshop 2024\git_repo\stm32u0_workshop\hands_on_ready\EndDevice\STM32U083MCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EndDevice.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

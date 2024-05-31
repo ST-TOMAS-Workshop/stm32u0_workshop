@@ -171,7 +171,7 @@ uint32_t negDutyCycle = 0;
 Copy paste following snippet in `USER CODE BEGIN PFP` section in **main.c** file:
 
 ```c
-void Convert_IntegerIntoChar(float number, uint16_t *p_tab);
+void Convert_IntegerIntoChar(uint32_t number, uint16_t *p_tab);
 ```
 
 # Initialization 2
@@ -280,6 +280,10 @@ void CaptureFalling_Callback(void)
 	{
 		DiffValueFall = (newValueFall - oldValueFall);
 		negDutyCycle = (newValueRise - oldValueFall) * 100 / DiffValueFall;
+		/*Enable RTC WakeUp*/
+		/* Configure the Interrupt in the RTC_CR register and Enable the Wakeup Timer*/
+		LL_RTC_EnableIT_WUT(RTC);
+		LL_RTC_WAKEUP_Enable(RTC);
 	}
 	else
 	{
@@ -353,7 +357,7 @@ void WakeUp_Callback(void)
 }
 
 /*Simplified for Two Digits only, rest is kept as a reference*/
-void  Convert_IntegerIntoChar(float number, uint16_t *p_tab)
+void  Convert_IntegerIntoChar(uint32_t number, uint16_t *p_tab)
 {
   uint16_t units=0, tens=0; // hundreds=0, thousands=0, tenthousand=0, hundredthousand=0;
 

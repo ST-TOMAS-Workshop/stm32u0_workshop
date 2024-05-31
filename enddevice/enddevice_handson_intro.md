@@ -8,7 +8,7 @@ Presentation
 - Need also provide asnwers back to power line
 - Pulse can be very distorted
   
-## In a Workshop
+## During the Workshop
 
 - Use **STM32U83-DK** board
 - Device is not supplied from BUS (it would require extra power supply)

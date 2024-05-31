@@ -58,7 +58,7 @@ static void MX_COMP1_Init(void);
 static void MX_LPTIM1_Init(void);
 static void MX_RTC_Init(void);
 /* USER CODE BEGIN PFP */
-void Convert_IntegerIntoChar(float number, uint16_t *p_tab);
+void Convert_IntegerIntoChar(uint32_t number, uint16_t *p_tab);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -358,6 +358,10 @@ void CaptureFalling_Callback(void)
     {
         DiffValueFall = (newValueFall - oldValueFall);
         negDutyCycle = (newValueRise - oldValueFall) * 100 / DiffValueFall;
+        /*Enable RTC WakeUp*/
+        /* Configure the Interrupt in the RTC_CR register and Enable the Wakeup Timer*/
+        LL_RTC_EnableIT_WUT(RTC);
+        LL_RTC_WAKEUP_Enable(RTC);
     }
     else
     {
@@ -366,10 +370,6 @@ void CaptureFalling_Callback(void)
          * DiffValueFall = ((LPTIM1_ARR_MAX - oldValueFall) + newValueFall) + 1;
         */
     }
-    /*Enable RTC WakeUp*/
-    /* Configure the Interrupt in the RTC_CR register and Enable the Wakeup Timer*/
-    LL_RTC_EnableIT_WUT(RTC);
-    LL_RTC_WAKEUP_Enable(RTC);
 }
   /*ISR for Rising edges from CH3_LPTIM1 and calculate duty cycle of negative pulse*/
 void CaptureRising_Callback(void)
@@ -395,7 +395,7 @@ void WakeUp_Callback(void)
         tab[1] = 0x75; //"u"
         tab[2] = 0x43; //"C"
         tab[2] |= DOUBLE_DOT ; //add double dot
-        tab[3] = 0x30; //"C"
+        tab[3] = 0x30; //"0"
     }
     else
     {
@@ -420,7 +420,7 @@ void WakeUp_Callback(void)
 
 }
 /*Simplified for Two Digits only, rest is kept as a reference*/
-void  Convert_IntegerIntoChar(float number, uint16_t *p_tab)
+void  Convert_IntegerIntoChar(uint32_t number, uint16_t *p_tab)
 {
   uint16_t units=0, tens=0; // hundreds=0, thousands=0, tenthousand=0, hundredthousand=0;
 

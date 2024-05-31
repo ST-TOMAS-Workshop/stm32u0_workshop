@@ -3,9 +3,9 @@ Presentation
 ----!
 # Master panel
 - Powered bus with limited current
-- Transmit messages and expeceted answer within defined time window
+- Transmit messages and expected answer within defined time window
 
-## In a Workshop
+## During the Workshop
 - Use **STM32U83-NUCLEO** board
 
 - Generate low pulse with various duty cycle thanks **TIMER in PWM** mode
