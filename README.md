@@ -1,4 +1,4 @@
-# STM32U5 workshop repository
+# STM32U0 workshop repository
 
 This is repository with STM32U0 workshop materials
 
