@@ -1,0 +1,10 @@
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_lcd.c:293:13:HAL_LCD_MspDeInit	1
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_lcd.c:263:19:HAL_LCD_DeInit	2
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_lcd.c:308:13:HAL_LCD_MspInit	1
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_lcd.c:140:19:HAL_LCD_Init	9
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_lcd.c:381:19:HAL_LCD_Write	6
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_lcd.c:432:19:HAL_LCD_Clear	7
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_lcd.c:488:19:HAL_LCD_UpdateDisplayRequest	3
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_lcd.c:547:22:HAL_LCD_GetState	1
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_lcd.c:558:10:HAL_LCD_GetError	1
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_lcd.c:580:19:LCD_WaitForSynchro	3

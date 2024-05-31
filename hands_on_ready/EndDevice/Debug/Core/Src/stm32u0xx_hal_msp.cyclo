@@ -1,0 +1,7 @@
+../Core/Src/stm32u0xx_hal_msp.c:63:6:HAL_MspInit	1
+../Core/Src/stm32u0xx_hal_msp.c:86:6:HAL_COMP_MspInit	2
+../Core/Src/stm32u0xx_hal_msp.c:119:6:HAL_COMP_MspDeInit	2
+../Core/Src/stm32u0xx_hal_msp.c:147:6:HAL_LPTIM_MspInit	3
+../Core/Src/stm32u0xx_hal_msp.c:183:6:HAL_LPTIM_MspDeInit	2
+../Core/Src/stm32u0xx_hal_msp.c:208:6:HAL_RTC_MspInit	3
+../Core/Src/stm32u0xx_hal_msp.c:246:6:HAL_RTC_MspDeInit	2

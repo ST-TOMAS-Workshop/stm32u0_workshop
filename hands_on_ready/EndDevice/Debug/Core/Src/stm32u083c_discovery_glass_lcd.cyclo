@@ -1,0 +1,13 @@
+../Core/Src/stm32u083c_discovery_glass_lcd.c:848:13:WriteChar.isra	30
+../Core/Src/stm32u083c_discovery_glass_lcd.c:155:6:BSP_LCD_GLASS_Init	2
+../Core/Src/stm32u083c_discovery_glass_lcd.c:186:6:BSP_LCD_GLASS_DeInit	1
+../Core/Src/stm32u083c_discovery_glass_lcd.c:215:6:BSP_LCD_GLASS_BlinkConfig	1
+../Core/Src/stm32u083c_discovery_glass_lcd.c:234:6:BSP_LCD_GLASS_Contrast	1
+../Core/Src/stm32u083c_discovery_glass_lcd.c:249:6:BSP_LCD_GLASS_DisplayBar	8
+../Core/Src/stm32u083c_discovery_glass_lcd.c:303:6:BSP_LCD_GLASS_ClearBar	8
+../Core/Src/stm32u083c_discovery_glass_lcd.c:358:6:BSP_LCD_GLASS_BarLevelConfig	6
+../Core/Src/stm32u083c_discovery_glass_lcd.c:454:6:BSP_LCD_GLASS_DisplayChar	1
+../Core/Src/stm32u083c_discovery_glass_lcd.c:468:6:BSP_LCD_GLASS_DisplayString	4
+../Core/Src/stm32u083c_discovery_glass_lcd.c:494:6:BSP_LCD_GLASS_DisplayStrDeci	6
+../Core/Src/stm32u083c_discovery_glass_lcd.c:531:6:BSP_LCD_GLASS_Clear	1
+../Core/Src/stm32u083c_discovery_glass_lcd.c:546:6:BSP_LCD_GLASS_ScrollSentence	12

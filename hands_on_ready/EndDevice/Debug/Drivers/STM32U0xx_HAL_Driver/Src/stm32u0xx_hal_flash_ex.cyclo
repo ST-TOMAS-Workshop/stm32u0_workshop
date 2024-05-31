@@ -1,0 +1,15 @@
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_flash_ex.c:139:19:HAL_FLASHEx_Erase	7
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_flash_ex.c:208:19:HAL_FLASHEx_Erase_IT	4
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_flash_ex.c:277:19:HAL_FLASHEx_OBProgram	13
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_flash_ex.c:366:6:HAL_FLASHEx_OBGetConfig	4
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_flash_ex.c:389:6:HAL_FLASHEx_EnableDebugger	1
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_flash_ex.c:401:6:HAL_FLASHEx_DisableDebugger	1
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_flash_ex.c:412:10:HAL_FLASHEx_FlashEmptyCheck	1
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_flash_ex.c:426:6:HAL_FLASHEx_ForceFlashEmpty	1
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_flash_ex.c:464:6:FLASH_PageErase	1
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_flash_ex.c:483:6:FLASH_FlushCaches	2
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_flash_ex.c:746:6:HAL_FLASH_OB_GetOEMKeyCRC	3
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_flash_ex.c:772:6:HAL_FLASHEx_EnableHDPProtection	1
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_flash_ex.c:784:10:HAL_FLASHEx_IsEnabledHDPProtection	1
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_flash_ex.c:794:6:HAL_FLASHEx_ConfigHDPExtension	1
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_flash_ex.c:808:6:HAL_FLASHEx_GetHDPExtensionConfig	1

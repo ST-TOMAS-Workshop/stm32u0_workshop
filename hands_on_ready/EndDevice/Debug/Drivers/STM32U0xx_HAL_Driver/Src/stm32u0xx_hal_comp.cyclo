@@ -1,0 +1,12 @@
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_comp.c:520:13:HAL_COMP_MspInit	1
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_comp.c:230:19:HAL_COMP_Init	20
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_comp.c:535:13:HAL_COMP_MspDeInit	1
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_comp.c:471:19:HAL_COMP_DeInit	3
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_comp.c:730:19:HAL_COMP_Start	6
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_comp.c:782:19:HAL_COMP_Stop	4
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_comp.c:929:19:HAL_COMP_Lock	5
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_comp.c:987:10:HAL_COMP_GetOutputLevel	1
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_comp.c:1001:13:HAL_COMP_TriggerCallback	1
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_comp.c:824:6:HAL_COMP_IRQHandler	5
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_comp.c:1035:23:HAL_COMP_GetState	2
+../Drivers/STM32U0xx_HAL_Driver/Src/stm32u0xx_hal_comp.c:1055:10:HAL_COMP_GetError	1
