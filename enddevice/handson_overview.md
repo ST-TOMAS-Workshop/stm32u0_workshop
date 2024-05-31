@@ -37,15 +37,15 @@ Let imagine simple BUS architecture one Master Panel and multiple End devices.
   <br>
   - **2 female-female wires** (min 10cm length) to connect header pins 
   <br>
-  - **[NUCLEO-U083RC](https://www.st.com/en/evaluation-tools/nucleo-u083rc.html)** board (??? Can be ordered after session for special price?? or something else???)
+  - **[NUCLEO-U083RC](https://www.st.com/en/evaluation-tools/nucleo-u083rc.html)** board 
   <br>
   ![image](./img/nucleo.png)
   <br>
-  - **[STM32U083C-DK](https://www.st.com/en/evaluation-tools/stm32u083c-dk.html)** board (??? Can be ordered after session for special price?? or something else???)
+  - **[STM32U083C-DK](https://www.st.com/en/evaluation-tools/stm32u083c-dk.html)** board 
   <br>
   ![image](./img/DK.png)
   <br>
-  - **[STLINK-V3PWR](https://www.st.com/en/development-tools/stlink-v3pwr.html)** board (??? Can be ordered after session for special price?? or something else???)
+  - **[STLINK-V3PWR](https://www.st.com/en/development-tools/stlink-v3pwr.html)** board 
   <br>
   ![image](./img/V3PWR.png)
   <br>

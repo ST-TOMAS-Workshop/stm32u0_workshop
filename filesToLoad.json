@@ -7,21 +7,6 @@
   },
   "filesToLoadArr": [
     {
-      "name": "Preparation to STM32U5 workshop",
-      "path": "/introduction_instalation",
-      "file": "start.md"
-    },
-    {
-      "name": "STM32U5 Workshop - preparation before live sessions",
-      "path": "/introduction_instalation",
-      "file": "file_live.md"
-    },
-    {
-      "name": "STM32U5 Workshop - preparation and homework before on-line sessions",
-      "path": "/introduction_instalation",
-      "file": "file_online.md"
-    },
-    {
       "name": "1. ULP modes",
       "path": "/enddevice",
       "file": "enddevice_theory_enddevice.md"
@@ -37,7 +22,7 @@
       "file": "enddevice_theory_exti.md"
     },
     {
-      "name": "1. Hands-on Overview",
+      "name": "1. End Device hands-on Overview",
       "path": "/enddevice",
       "file": "enddevice_handson_intro.md"
     },
@@ -67,12 +52,12 @@
       "file": "enddevice_handson_powmon.md"
     },
     {
-      "name": "7. Power Consumption",
+      "name": "7. Results",
       "path": "/enddevice",
       "file": "enddevice_handson_result.md"
     },
     {
-      "name": "1. Hands-on Overview",
+      "name": "1. Master Panel hands-on Overview",
       "path": "/masterpanel",
       "file": "masterpanel_handson_intro.md"
     },
@@ -102,7 +87,7 @@
       "file": "masterpanel_handson_powmon.md"
     },
     {
-      "name": "7. Power Consumption",
+      "name": "7. Results",
       "path": "/masterpanel",
       "file": "masterpanel_handson_result.md"
     },
@@ -110,6 +95,16 @@
       "name": "Demo Hands-on Overview",
       "path": "/enddevice",
       "file": "handson_overview.md"
+    },
+    {
+      "name": "Hands-on Summary",
+      "path": "/support",
+      "file": "handson_summary.md"
+    },
+    {
+      "name": "Hands-on Materials",
+      "path": "/support",
+      "file": "handson_material.md"
     }
   ],
   "menuStructure": [
@@ -212,8 +207,13 @@
         },
         {
           "type": "File",
+          "name": "HANDS-ON SUMMARY",
+          "file": "handson_summary.md"
+        },
+        {
+          "type": "File",
           "name": "WORKSHOP PACKAGE MATERIALS",
-          "file": "stm32u0_workshop_package_materials.md"
+          "file": "hands_material.md"
         }
       ]
     }
