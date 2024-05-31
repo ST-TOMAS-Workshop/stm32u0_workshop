@@ -2,7 +2,7 @@
 Presentation
 ----!
 # Test Functionality
-Check functionlaity we developt in past 90 minutes!
+Check functionlaity we developt in past 60 minutes!
 
 - Supply DK board
 - Reset Nucelo board by reset button - to be sure BUS is in IDLE state

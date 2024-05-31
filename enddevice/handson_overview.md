@@ -2,7 +2,14 @@
 Presentation
 ----!
 
-# Wired BUS Architecture
+# Hands-on exercises
+## Implementing a simple BUS system that operates down to Stop mode
+
+- Step-by-step guide on using HAL/LL/BSP libraries to manage BUS system
+-	Utilizing DMA, LPTIM, RTC, Comparator, and Glass LCD in low-power condition
+-	Verify consumption in STM32CubeMonitor-PWR
+
+# Wired BUS System
 Let imagine simple BUS architecture one Master Panel and multiple End devices.
 
 - Two wires BUS 
