@@ -70,15 +70,6 @@ Drag and drop listed c file from `C:\Users\...\STM32Cube\Repository\STM32Cube_FW
 
 <br />
 
-# Possible compilation error
-It's a known point retated to the non-ASCII characters in BSP package for LCD driver. This depends on the tools (for exemple IAR display it and recognize it correctly). For STM32CubeIDE and MDK-ARM we added some options to support it and this compiling well.
-
-Add option `-Wno-multichar` in `Properties -> C/C++ Build -> Settings -> MCU GCC Compilier -> Miscellaneous`.
-
-![image](./img/wno_multichar.png)
-
-<br />
-
 # DK Board revision
 - Solder mask print MB1933x (x = A/B/C/..)
 
@@ -106,7 +97,7 @@ Let skip them and use simple LL function.
 
 ## RTC ISR
 
-**Uncomment** `HAL_RTCEx_WakeUpTimerIRQHandler(&hrtc);` callback in `RTC_TAMP_IRQHandler(void)` of **stm32u0xx_it.c** file.
+**Comment** `HAL_RTCEx_WakeUpTimerIRQHandler(&hrtc);` callback in `RTC_TAMP_IRQHandler(void)` of **stm32u0xx_it.c** file.
 
 ```c
   /* USER CODE END RTC_TAMP_IRQn 0 */
@@ -133,7 +124,7 @@ if (LL_RTC_IsActiveFlag_WUT(RTC) != 0)
 
 ## LPTIM1 ISR
 
-**Uncomment** `HAL_LPTIM_IRQHandler(&hlptim1);` callback in `TIM6_DAC_LPTIM1_IRQHandler(void)` of **stm32u0xx_it.c** file.
+**Comment** `HAL_LPTIM_IRQHandler(&hlptim1);` callback in `TIM6_DAC_LPTIM1_IRQHandler(void)` of **stm32u0xx_it.c** file.
 
 ```c
   /* USER CODE END TIM6_DAC_LPTIM1_IRQn 0 */
@@ -207,8 +198,16 @@ HAL_RTCEx_DeactivateWakeUpTimer(&hrtc);
 ```
 
 # Start IPs
-In this stage let add user code which launch signal measuring and display welcome words on Glass LCD.
+In this stage let add user code which launch signal measuring and display welcome message on Glass LCD.
+
 Also put MCU in LowPower Run as System frequency = 2MHz.
+
+As BSP is adopted for Glass LCD, still some minor tunning must be placed for further consumption reduction. 
+This step is execute after Scrolling message for static message. 
+LCD Contrast is kept at sufficient level for static message.  
+- Reduce PulseOn duration time to 1 cycle
+- Avoid Low resistance R-ladder in LCD output stage = disable HighDrive
+- VLCD level is configured to minimum 2.6V
 
 Copy paste following snippet in `USER CODE BEGIN 2` section in **main.c** file:
 
@@ -230,25 +229,12 @@ HAL_LPTIM_IC_Start_IT(&hlptim1, LPTIM_CHANNEL_3);
 BSP_LCD_GLASS_ScrollSentence((uint8_t *)"       waiting for signal and go to STOP mode ", 1 , 149);
 BSP_LCD_GLASS_Clear();
 
-/* Reduce Vcld (Contrast Control) after scrolling text
- *  High drive and PulseOn duration already changed in BSP -> lower consumption*/
-MODIFY_REG(LCD->FCR, LCD_FCR_CC, LCD_CONTRASTLEVEL_0);
+/* Reduce Contrast  after scrolling message -> lower consumption
+   *  VLCD set to minimum = 2.6V, disable High drive and PulseOn duration to 1*/ 
+MODIFY_REG(LCD->FCR, (LCD_FCR_PON | LCD_FCR_CC | LCD_FCR_HD), ( LCD_PULSEONDURATION_1 | LCD_CONTRASTLEVEL_0 | LCD_HIGHDRIVE_DISABLE));
 while (READ_BIT(LCD->SR, LCD_SR_FCRSR) == 0);
 
 BSP_LCD_GLASS_DisplayString((uint8_t *)"IDLE");
-```
-
-## LCD BSP modification
-As BSP is adopted for Glass LCD, still some minor tunning must be placed for further consumption reduction. 
-It influences contrast but still Glass LCD will be readable.
-- Reduce PulseOn duration time to 1 cycle
-- Avoid Low resistance R-ladder in LCD output stage
-
-Modify two lines in `BSP_LCD_GLASS_Init()` function upper section in **stm32u083c_discovery_glass_lcd.c** file:
-
-```c
-LCDHandle.Init.PulseOnDuration  = LCD_PULSEONDURATION_1; //LCD_PULSEONDURATION_4
-LCDHandle.Init.HighDrive        = LCD_HIGHDRIVE_DISABLE; //LCD_HIGHDRIVE_ENABLE
 ```
 
 ## Stop mode
@@ -261,10 +247,10 @@ Copy paste following snippet in while (1) `USER CODE BEGIN WHILE` section in **m
 HAL_PWREx_EnterSTOP1Mode(PWR_STOPENTRY_WFI);
 ```
 
-# ISR Callback
+# ISR Callbacks
 Incoming signal is proccesed once device wakeups from Stop mode in ISR callbacks.
 
-## LPTIM1 Callbacks
+## LPTIM1 Callback
 ISR for Falling edges from CH1_LPTIM1 and calculate and display duty cycle of negative pulse.
 Also handle 1s TimeOut on bus line.
 
@@ -315,7 +301,7 @@ void CaptureRising_Callback(void)
 ```
 <br />
 
-## RTC Callbacks
+## RTC Callback
 ISR from 1s periodic WakeUp timer update Glass LCD with duty cycle of negative pulse.
 Also handle 1s TimeOut on bus line.
 Adding helper fucntion which convert Integer (measured Duty Cycle) into Char which can be displayed on Glass LCD.
