@@ -114,12 +114,12 @@
       "children": [
         {
           "type": "File",
-          "name": "DEMO Hands-on Overview",
+          "name": "Hands-on Overview",
           "file": "handson_overview.md"
         },
         {
           "type": "Folder",
-          "name": "STM32U0 Demo Hands-on",
+          "name": "STM32U0 Hands-on",
           "children": [
             {
               "type": "Folder",
@@ -207,12 +207,12 @@
         },
         {
           "type": "File",
-          "name": "HANDS-ON SUMMARY",
+          "name": "Hands-on Summary",
           "file": "handson_summary.md"
         },
         {
           "type": "File",
-          "name": "WORKSHOP PACKAGE MATERIALS",
+          "name": "Workshop Hands-on Materials",
           "file": "handson_material.md"
         }
       ]
