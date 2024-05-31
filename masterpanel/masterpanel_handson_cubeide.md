@@ -12,7 +12,7 @@ Presentation
 Copy paste following snippet in `USER CODE BEGIN PV` section in **main.c** file:
 
 ```c
-uint32_t SRC_Buffer_LED_PWM[4]  = {15, 30, 45, 0}; // define Low pulse width ~750us, 1.5ms, 2.25ms and IDLE state
+uint32_t SRC_Buffer_LED_PWM[4]  = {20, 40, 60, 0}; // define Low pulse width ~1ms, 2ms, 3ms and IDLE state
 ```
 
 # IPs start

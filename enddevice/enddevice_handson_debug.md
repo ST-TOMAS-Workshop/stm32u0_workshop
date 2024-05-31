@@ -1,6 +1,19 @@
-----!
+//----!
 Presentation
 ----!
+# Compile Code with optimization
+<p> </p>
+To reduce time spent in Run mode (ISR) compile code for speed.
+<p> </p>
+
+Go to `Project - Properties - C/C++ Build - Settings - MCU GCC Compiler - Optimization`
+
+- select `Optimize for speed (-Ofast)`
+
+<p> </p>
+
+![image](./img/optimization.png)
+
 
 # Compile Code
 <p> </p>

@@ -8,7 +8,7 @@ Check full application we developt in past 90 minutes!
 - Reset Nucelo board by reset button - to be sure BUS is in IDLE state
 - Connect Nucleo to DK board
 - Reset DK board - welcome message is scrolling
-- After press user (blue) button on Master Panel (Nucleo) the End Device(DK) shows state on BUS (IDLE or Duty Cycle of Low pulse 15/30/45 %)
+- After press user (blue) button on Master Panel (Nucleo) the End Device(DK) shows state on BUS (IDLE or Duty Cycle of Low pulse 20/40/60 %)
 
 ![image](./img/nonidle.png)
 
