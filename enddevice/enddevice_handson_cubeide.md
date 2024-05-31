@@ -275,8 +275,8 @@ Copy paste following snippet in `USER CODE BEGIN 4` section in **main.c** file:
 ```c
 /*ISR for Falling edges from CH1_LPTIM1 and calculate duty cycle of negative pulse
  * 
- *      ____IDLE_____negDC_______
- *    		   	|   |	     |  |
+ *      ____IDLE_____negDC________
+ *    		   	|   |	    |   |
  *     			  |___|		|___|
  * 			  oldVF  newVR  newVF
  * */
