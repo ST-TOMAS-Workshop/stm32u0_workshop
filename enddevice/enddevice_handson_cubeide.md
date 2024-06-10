@@ -207,7 +207,7 @@ This step is execute after Scrolling message for static message.
 LCD Contrast is kept at sufficient level for static message.  
 - Reduce PulseOn duration time to 1 cycle
 - Avoid Low resistance R-ladder in LCD output stage = disable HighDrive
-- VLCD level is configured to minimum 2.6V
+- VLCD level is configured to get reasonable contrast level ~2.86V
 
 Copy paste following snippet in `USER CODE BEGIN 2` section in **main.c** file:
 
@@ -230,15 +230,15 @@ BSP_LCD_GLASS_ScrollSentence((uint8_t *)"       waiting for signal and go to STO
 BSP_LCD_GLASS_Clear();
 
 /* Reduce Contrast  after scrolling message -> lower consumption
-   *  VLCD set to minimum = 2.6V, disable High drive and PulseOn duration to 1*/ 
-MODIFY_REG(LCD->FCR, (LCD_FCR_PON | LCD_FCR_CC | LCD_FCR_HD), ( LCD_PULSEONDURATION_1 | LCD_CONTRASTLEVEL_0 | LCD_HIGHDRIVE_DISABLE));
+   *  VLCD set to minimum to get reasonable contrast ~2.86V, disable High drive and PulseOn duration to 1*/ 
+MODIFY_REG(LCD->FCR, (LCD_FCR_PON | LCD_FCR_CC | LCD_FCR_HD), ( LCD_PULSEONDURATION_1 | LCD_CONTRASTLEVEL_2 | LCD_HIGHDRIVE_DISABLE));
 while (READ_BIT(LCD->SR, LCD_SR_FCRSR) == 0);
 
 BSP_LCD_GLASS_DisplayString((uint8_t *)"IDLE");
 ```
 
 ## Stop mode
-Enter in Stop mode. Selected Stop1 mode is due to possible transition between LPRun <-> Stop1. Transition between LPRun <-> Stop2 is not allowed deu to Main regulaotr is off. Please chekc Refference Manual. 
+Enter in Stop mode. Selected Stop1 mode is due to possible transition between LPRun <-> Stop1. Transition between LPRun <-> Stop2 is not allowed deu to Main regulaotr is off. Please check Reference Manual. 
 
 Copy paste following snippet in while (1) `USER CODE BEGIN WHILE` section in **main.c** file:
 
@@ -292,10 +292,6 @@ void CaptureFalling_Callback(void)
 		 * DiffValueFall = ((LPTIM1_ARR_MAX - oldValueFall) + newValueFall) + 1;
 		*/
 	}
-	/*Enable RTC WakeUp*/
-	/* Configure the Interrupt in the RTC_CR register and Enable the Wakeup Timer*/
-	LL_RTC_EnableIT_WUT(RTC);
-	LL_RTC_WAKEUP_Enable(RTC);
 }
   /*ISR for Rising edges from CH3_LPTIM1 and calculate duty cycle of negative pulse*/
 void CaptureRising_Callback(void)
@@ -331,7 +327,7 @@ void WakeUp_Callback(void)
 		tab[1] = 0x75; //"u"
 		tab[2] = 0x43; //"C"
 		tab[2] |= DOUBLE_DOT ; //add double dot
-		tab[3] = 0x30; //"C"
+		tab[3] = 0x30; //"0"
 	}
 	else
 	{

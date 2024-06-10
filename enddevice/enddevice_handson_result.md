@@ -14,13 +14,13 @@ Check full application we developt in past 90 minutes!
 
 # Measured consumption
 ## Measure consumption in IDLE state on BUS
-- Average consumption in **IDLE ~ 8 uA** STOP1, driving LCD, keep LPTIM and RTC active
+- Average consumption in **IDLE ~ 8?? uA** STOP1, driving LCD, keep LPTIM and RTC active
 
 ![image](./img/stop1.png)
 
 ## Measure consumption in non-IDLE state on BUS
 
-- Average consumption once pulses occur on BUS **non-IDLE ~39uA** combination STOP1 + LP Run in ISR, process data
+- Average consumption once pulses occur on BUS **non-IDLE ~29??uA** combination STOP1 + LP Run in ISR, process data
 
 ![image](./img/fullconsumption.png)
 

@@ -5,8 +5,8 @@ Consumption was measured in LP Sleep mode, resulting in a measured consumption o
 
 **End Device**
 <br>
-Measured consumption in the IDLE state on the BUS, with an average consumption of ~8 uA in STOP1 mode while driving the LCD and keeping LPTIM and RTC active.
-Measured consumption in the non-IDLE state on the BUS, with an average consumption of ~39 uA, involving a combination of STOP1 and LP Run in ISR for data processing.
+Measured consumption in the IDLE state on the BUS, with an average consumption of ~8?? uA in STOP1 mode while driving the LCD and keeping LPTIM and RTC active.
+Measured consumption in the non-IDLE state on the BUS, with an average consumption of ~29?? uA, involving a combination of STOP1 and LP Run in ISR for data processing.
 
 ## Conclusion
 

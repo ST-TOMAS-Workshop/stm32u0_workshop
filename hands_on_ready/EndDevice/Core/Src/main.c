@@ -121,8 +121,8 @@ int main(void)
   BSP_LCD_GLASS_Clear();
 
   /* Reduce Contrast  after scrolling message -> lower consumption
-   *  VLCD set to minimum, disable High drive and PulseOn duration to minimum*/
-  MODIFY_REG(LCD->FCR, (LCD_FCR_PON | LCD_FCR_CC | LCD_FCR_HD), ( LCD_PULSEONDURATION_1 | LCD_CONTRASTLEVEL_0 | LCD_HIGHDRIVE_DISABLE));
+   *  VLCD set to minimum with good contrast, disable High drive and PulseOn duration to minimum*/
+  MODIFY_REG(LCD->FCR, (LCD_FCR_PON | LCD_FCR_CC | LCD_FCR_HD), ( LCD_PULSEONDURATION_1 | LCD_CONTRASTLEVEL_2 | LCD_HIGHDRIVE_DISABLE));
   while (READ_BIT(LCD->SR, LCD_SR_FCRSR) == 0);
 
   BSP_LCD_GLASS_DisplayString((uint8_t *)"IDLE");
