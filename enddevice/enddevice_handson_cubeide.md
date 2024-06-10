@@ -205,6 +205,7 @@ Also put MCU in LowPower Run as System frequency = 2MHz.
 As BSP is adopted for Glass LCD, still some minor tunning must be placed for further consumption reduction. 
 This step is execute after Scrolling message for static message. 
 LCD Contrast is kept at sufficient level for static message.  
+
 - Reduce PulseOn duration time to 1 cycle
 - Avoid Low resistance R-ladder in LCD output stage = disable HighDrive
 - VLCD level is configured to get reasonable contrast level ~2.86V
