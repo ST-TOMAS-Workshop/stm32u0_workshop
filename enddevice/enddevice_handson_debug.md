@@ -26,7 +26,7 @@ Disable Debug in Low Power modes. Otherwise MCU does no enter in genuine LP mode
 </awarning>
 
 <p> </p>
-- Debug configurations window is opened during first debug session or open it manualy.
+- Debug configurations window is opened during first debug session or open it manually.
 <p> </p>
 
 ![gif](./img/debugconf.gif)

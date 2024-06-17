@@ -21,7 +21,7 @@ Do not enable NVIC!.
 ![image](./img/PC13.png)
 
 # Timer
-TIMER in PWM mode is used for simulation of message generation. Period set 5ms @1MHz Sysclock.
+TIMER in PWM mode is used for simulation of message generation. Period set 5ms @1MHz SysClock.
 
 - Select **TIM2** instance
   

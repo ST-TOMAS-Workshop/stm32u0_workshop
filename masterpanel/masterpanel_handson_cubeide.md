@@ -16,7 +16,7 @@ uint32_t SRC_Buffer_LED_PWM[4]  = {20, 40, 60, 0}; // define Low pulse width ~1m
 ```
 
 # IPs start
-This section manages complete user code structure. MCU is running at @1MHz Sysclock so LP Run and LP Sleep are implemented.
+This section manages complete user code structure. MCU is running at @1MHz SysClock so LP Run and LP Sleep are implemented.
 DMA configuration is just about set source address (buffer with pulses) and destination address (Capture/Compare register). After button press Capture/Compare register is updated with new value.
 
 XXSMEN registers are reset to reduce further consumption in Sleep mode when internal busses are still clocked. Peripherals are not active as their master xxEN bits are reset. However, extra 10uA/1MHz is reduced due to limiting clock distribution within device. By default xxSMEN are set after reset.
@@ -29,7 +29,7 @@ Copy paste following snippet in `USER CODE BEGIN 2` section in **main.c** file:
 ```c
 	 /* Enable LP run mode */
     __HAL_RCC_PWR_CLK_ENABLE();
-    HAL_PWREx_EnableLowPowerRunMode(); //we can do it as Sysclock <2MHz and enter in Sleep mode
+    HAL_PWREx_EnableLowPowerRunMode(); //we can do it as SysClock <2MHz and enter in Sleep mode
 
     /*Drive LED and Generate Pulses*/
     HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);

@@ -16,7 +16,7 @@ Let imagine simple BUS architecture one Master Panel and multiple End devices.
     - DC power supply + communication
     - VSS
 - Data stream are modulated as Edges in power line
-- Defined Low pulse widths for 1/0 bit in range hundred of microseconds to few miliseconds
+- Defined Low pulse widths for 1/0 bit in range hundred of microseconds to few milliseconds
 - Proprietary protocol
     - typically start bit + data + stop bits
 

@@ -5,7 +5,7 @@ Presentation
 # Test Functionality
 Check functionality we develop in past 30 minutes!
 
-- Supply Nucelo board
+- Supply Nucleo board
 - After every press blue user button a Duty cycle of Low pulse is updated
 - Visible change in **LED brightness**
 

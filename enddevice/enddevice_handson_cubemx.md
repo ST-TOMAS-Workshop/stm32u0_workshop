@@ -42,7 +42,7 @@ To be able catch signal edge down to Stop modes. LPTIM1 and LSE cooperates toget
 ![image](./img/LPTIM1.png)
 
 # RealTime Clock unit
-Application periodically wakeups from Stop modes and refresh LCD glass display.
+Application periodically wakes up from Stop modes and refresh LCD glass display.
 
 - Select **RTC** instance
   

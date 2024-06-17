@@ -5,7 +5,7 @@ Presentation
 STLINK-V3PWR is a two-in-one standalone debugger probe and a source measurement unit (SMU) designed to synchronize code execution with a power consumption of STM32 applications in real time. This tool is specifically adapted for power consumption optimization.
 
 - Programmable voltage source from 1.6 to 3.6 V
-- sampling rate upto 100 kSpS
+- sampling rate up to 100 kSpS
 - Dynamic measurement: few nA to 500 mA current
 - Auxiliary output voltage source from 1.6 to 3.6 V under up to 2 A 
 - JTAG / Serial Wire Debug
@@ -43,7 +43,7 @@ Wires can be optionally twisted to reduce noise.
 
 ![image2](./img/wiring2.png) 
 
-- or **Connect A-meter** to Pin 1 & 2 of JP7. Then keep DK board power from USB-C and do not disconect it. 
+- or **Connect A-meter** to Pin 1 & 2 of JP7. Then keep DK board power from USB-C and do not disconnect it. 
   
 
 # Configuration
@@ -63,7 +63,7 @@ In Configuration window many parameters can be adjusted. For hands-on purpose le
 
 # Show report
 - FULL and SELECT FRAME consumption details (Min, Max, Average, Energy)
-- Acqusition must be **stoped**
+- Acquisition must be **stopped**
 - Press **Show Report**
 
 ![gif3](./img/showreport.gif)

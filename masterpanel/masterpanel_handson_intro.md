@@ -16,7 +16,7 @@ Presentation
 
 - Duty cycle is monitored on LED dimming
 
-- MCU never wakeup
+- MCU never wakes up
 
 - Optionally consumption profile can be verified in **STM32CubeMonitor-Power**
   

@@ -5,7 +5,7 @@ Presentation
 
 - Supplied from BUS and continuously decoding stream on BUS
 - Depends on timing requirements End device combining Sleep/StopX modes
-- Need also provide asnwers back to power line
+- Need also provide answers back to power line
 - Pulse can be very distorted
   
 ## During the Workshop
