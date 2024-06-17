@@ -252,13 +252,6 @@ Copy paste following snippet at the end of `USER CODE BEGIN 4` section in **main
   /*Enter in STOPx mode*/
   HAL_PWREx_EnterSTOP1Mode(PWR_STOPENTRY_WFI);
 ```
-<br />
-Copy paste following snippet in while (1) `USER CODE BEGIN WHILE` section in **main.c** file:
-
-```c
-/*Enter in STOPx mode*/
-HAL_PWREx_EnterSTOP1Mode(PWR_STOPENTRY_WFI);
-```
 
 # ISR Callbacks
 Incoming signal is processed once device wakes up from Stop mode in ISR callbacks.
