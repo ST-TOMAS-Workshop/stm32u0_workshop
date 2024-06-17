@@ -189,7 +189,7 @@ __HAL_RCC_BACKUPRESET_RELEASE();
 ```
 
 ## Deactivate WakeUp timer
-CubeMX enabled WakeUp timer immidiately during RTC init. In application flow RTC is used to update measured Duty Cycle value on Glass LCD. It must be enabled after recieveing any signal and not during initialization phase. 
+CubeMX enabled WakeUp timer immediately during RTC init. In application flow RTC is used to update measured Duty Cycle value on Glass LCD. It must be enabled after receiving any signal and not during initialization phase. 
 
 Copy paste following snippet in `USER CODE BEGIN RTC_Init 2` section in **main.c** file:
 
@@ -239,7 +239,21 @@ BSP_LCD_GLASS_DisplayString((uint8_t *)"IDLE");
 ```
 
 ## Stop mode
-Enter in Stop mode. Selected Stop1 mode is due to possible transition between LPRun <-> Stop1. Transition between LPRun <-> Stop2 is not allowed deu to Main regulaotr is off. Please check Reference Manual. 
+Enter in Stop mode. Selected Stop1 mode is due to possible transition between LPRun <-> Stop1. Transition between LPRun <-> Stop2 is not allowed deu to Main regulator is off. Please check Reference Manual. 
+
+<br />
+
+Application is fully controlled in Interrupt service routines for this reason device may enter in requested LP mode after exits ISR. Cortex M0+ offers this feature called **Sleep On Exit**. It saves some extra instructions as processor state is not un-stacked -> faster wake up and do not need call `HAL_PWREx_ENTER_STOP1Mode` all the time in loop. It reduces time spend in RUN by **~20 %** vs. Stop1 enter is called in while(1) loop. 
+
+Copy paste following snippet at the end of `USER CODE BEGIN 4` section in **main.c** file:
+
+```c
+/* Set SLEEP_ON_EXITDEEP bit when device enters in LP mode after exits ISR */
+  SET_BIT(SCB->SCR, ((uint32_t)SCB_SCR_SLEEPONEXIT_Msk));
+
+  /*Enter in STOPx mode*/
+  HAL_PWREx_EnterSTOP1Mode(PWR_STOPENTRY_WFI);
+```
 
 Copy paste following snippet in while (1) `USER CODE BEGIN WHILE` section in **main.c** file:
 
@@ -249,7 +263,7 @@ HAL_PWREx_EnterSTOP1Mode(PWR_STOPENTRY_WFI);
 ```
 
 # ISR Callbacks
-Incoming signal is proccesed once device wakeups from Stop mode in ISR callbacks.
+Incoming signal is processed once device wakes up from Stop mode in ISR callbacks.
 
 ## LPTIM1 Callback
 ISR for Falling edges from CH1_LPTIM1 and calculate and display duty cycle of negative pulse.
@@ -282,7 +296,7 @@ void CaptureFalling_Callback(void)
 		DiffValueFall = (newValueFall - oldValueFall);
 		negDutyCycle = (newValueRise - oldValueFall) * 100 / DiffValueFall;
 		/*Enable RTC WakeUp*/
-		/* Configure the Interrupt in the RTC_CR register and Enable the Wakeup Timer*/
+		/* Configure the Interrupt in the RTC_CR register and Enable the WakeUp Timer*/
 		LL_RTC_EnableIT_WUT(RTC);
 		LL_RTC_WAKEUP_Enable(RTC);
 	}
@@ -305,7 +319,7 @@ void CaptureRising_Callback(void)
 ## RTC Callback
 ISR from 1s periodic WakeUp timer update Glass LCD with duty cycle of negative pulse.
 Also handle 1s TimeOut on bus line.
-Adding helper fucntion which convert Integer (measured Duty Cycle) into Char which can be displayed on Glass LCD.
+Adding helper function which convert Integer (measured Duty Cycle) into Char which can be displayed on Glass LCD.
 
 Copy paste following snippet in `USER CODE BEGIN 4` section in **main.c** file:
 

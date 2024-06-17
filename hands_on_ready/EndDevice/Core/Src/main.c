@@ -126,14 +126,19 @@ int main(void)
   while (READ_BIT(LCD->SR, LCD_SR_FCRSR) == 0);
 
   BSP_LCD_GLASS_DisplayString((uint8_t *)"IDLE");
+
+  /* Set SLEEPDEEP bit of Cortex System Control Register */
+  SET_BIT(SCB->SCR, ((uint32_t)SCB_SCR_SLEEPONEXIT_Msk));
+
+  /*Enter in STOPx mode*/
+  HAL_PWREx_EnterSTOP1Mode(PWR_STOPENTRY_WFI);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  /*Enter in STOPx mode*/
-	  HAL_PWREx_EnterSTOP1Mode(PWR_STOPENTRY_WFI);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
