@@ -1,6 +1,6 @@
 {
   "title": "STM32U0 Workshop",
-  "githubLoc": "https://raw.githubusercontent.com/jank-st/stm32u0_workshop/master/",
+  "githubLoc": "https://raw.githubusercontent.com/ST-TOMAS-Workshop/stm32u0_workshop/master/",
   "options": {
     "allowMenu": true,
     "allowTagSelect": false
