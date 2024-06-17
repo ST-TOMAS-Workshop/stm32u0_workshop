@@ -24,6 +24,6 @@ Check full application we developed in past 90 minutes!
 
 ![image](./img/fullconsumption.png)
 
-- Detail focused on ISR from LPTIM_IC and RTC wake 
+- Detail focused on current peaks caused by Interrupt service routine from LPTIM Input Capture and RTC WakeUp
 
 ![image](./img/zoomconsumption.png)

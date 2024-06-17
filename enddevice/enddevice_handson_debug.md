@@ -9,6 +9,7 @@ To reduce time spent in Run mode (ISR) compile code for speed.
 Go to `Project - Properties - C/C++ Build - Settings - MCU GCC Compiler - Optimization`
 
 - select `Optimize for speed (-Ofast)`
+- click `Apply and Close`
 
 <p> </p>
 
