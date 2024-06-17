@@ -252,7 +252,7 @@ Copy paste following snippet at the end of `USER CODE BEGIN 4` section in **main
   /*Enter in STOPx mode*/
   HAL_PWREx_EnterSTOP1Mode(PWR_STOPENTRY_WFI);
 ```
-
+<br />
 Copy paste following snippet in while (1) `USER CODE BEGIN WHILE` section in **main.c** file:
 
 ```c
@@ -301,7 +301,7 @@ void CaptureFalling_Callback(void)
 	else
 	{
 		/*
-		 * For simplicity rest combination like "newValueFall < oldValueFall".... are NOT handled
+		 * For simplicity rest combinations like "newValueFall < oldValueFall".... are NOT handled
 		 * DiffValueFall = ((LPTIM1_ARR_MAX - oldValueFall) + newValueFall) + 1;
 		*/
 	}
