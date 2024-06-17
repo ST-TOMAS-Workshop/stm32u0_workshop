@@ -241,7 +241,7 @@ BSP_LCD_GLASS_DisplayString((uint8_t *)"IDLE");
 ## Stop mode
 Enter in Stop mode. Selected Stop1 mode is due to possible transition between LPRun <-> Stop1. Transition between LPRun <-> Stop2 is not allowed deu to Main regulator is off. Please check Reference Manual. 
 
-Application is fully controlled in Interrupt service routines for this reason device may enter in requested LP mode after exits ISR. Cortex M0+ offers this feature called **Sleep On Exit**. It saves some extra instructions as processor state is not un-stacked -> faster wake up and do not need call `HAL_PWREx_ENTER_STOP1Mode` all the time in loop. It reduces time spend in RUN by **~20 %** vs. Stop1 enter is called in while(1) loop. 
+Application is fully controlled in Interrupt service routines for this reason device may enter in requested LP mode after exits ISR. Cortex M0+ offers this feature called **Sleep On Exit**. It saves some extra instructions as processor state is not un-stacked -> faster wake up and do not need call `HAL_PWREx_ENTER_STOP1Mode` all the time in loop. It reduces time spend in RUN by **~20 %** vs. Stop1 enter is called periodically in while(1) loop. 
 
 Copy paste following snippet at the end of `USER CODE BEGIN 4` section in **main.c** file:
 
